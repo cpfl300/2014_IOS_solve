@@ -8,16 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-void printAllSubFiles(NSString *path){
-    NSFileManager *manager = [[NSFileManager alloc] init];
-    NSDirectoryEnumerator *fileEnumerator = [manager enumeratorAtPath:path];
-    
-    for(NSString *filename in fileEnumerator){
-        NSLog(@"%@\n",filename);
-    }
-    
-}
-
 NSMutableArray* findAllFileToArray(NSString *path){
     NSMutableArray* files = [[NSMutableArray alloc] init];
     
@@ -31,6 +21,12 @@ NSMutableArray* findAllFileToArray(NSString *path){
     return files;
 }
 
+void printAllSubFiles(NSString *path){
+    NSArray* fileList = findAllFileToArray(path);
+    for(NSString* fileName in fileList){
+        NSLog(@"%@\n",fileName);
+    }
+}
 void isExistFilename(NSString* findfile, NSString* path){
     NSFileManager *manager = [[NSFileManager alloc] init];
     NSDirectoryEnumerator *fileEnumerator = [manager enumeratorAtPath:path];
@@ -53,13 +49,13 @@ int main(int argc, const char * argv[])
         NSURL *myURL = [NSURL URLWithString:
                         @"file:////Users/Kimminju/Documents/2-2NEXT/IOS"];
         NSString *path = [myURL path];
-//        printAllSubFiles(path);
+        printAllSubFiles(path);
         
 //        NSArray* temp = findAllFileToArray(path);
         
         
-        NSString* temp = @"2014_IOS_solve";
-        isExistFilename(temp, path);
+//        NSString* temp = @"2014_IOS_solve";
+//        isExistFilename(temp, path);
 
         
 
