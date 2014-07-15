@@ -25,9 +25,15 @@ int main(int argc, const char * argv[])
         NSSortDescriptor* sortDiscriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
         NSArray* sortedArray = [temp sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortDiscriptor, nil]];
         
-        for(NSString* name in sortedArray){
-            NSLog(@"%@", name);
-        }
+//        for(NSString* name in sortedArray){
+//            NSLog(@"%@", name);
+//        }
+        
+        [fs printAllSubFiles:path];
+        
+        [fs isExistFilename:@"2.복제.pdf" At:path];
+        
+
     }
     return 0;
 }

@@ -10,6 +10,8 @@
 
 @interface FileSearch : NSObject
 
+@property NSFileManager *manager;
+
 -(NSMutableArray*) findAllFileToArray: (NSString*) path;
 -(void) printAllSubFiles: (NSString*) path;
 -(void) isExistFilename: (NSString*) findfile At:(NSString*) path;

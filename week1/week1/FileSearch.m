@@ -10,11 +10,17 @@
 
 @implementation FileSearch
 
+-(id)init{
+    self = [super init];
+    if(self){
+        _manager = [[NSFileManager alloc] init];
+    }
+    return self;
+}
+
 -(NSMutableArray*) findAllFileToArray: (NSString*) path{
     NSMutableArray* files = [[NSMutableArray alloc] init];
-    
-    NSFileManager *manager = [[NSFileManager alloc] init];
-    NSDirectoryEnumerator *fileEnumerator = [manager enumeratorAtPath:path];
+    NSDirectoryEnumerator *fileEnumerator = [_manager enumeratorAtPath:path];
     
     for(NSString *filename in fileEnumerator){
         [files addObject:filename];
@@ -34,8 +40,7 @@
 
 -(void) isExistFilename: (NSString*) findfile At:(NSString*) path
 {
-    NSFileManager *manager = [[NSFileManager alloc] init];
-    NSDirectoryEnumerator *fileEnumerator = [manager enumeratorAtPath:path];
+    NSDirectoryEnumerator *fileEnumerator = [_manager enumeratorAtPath:path];
     
     for(NSString *filename in fileEnumerator){
         if([filename isEqualToString:findfile] == 1){
