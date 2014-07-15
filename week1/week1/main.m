@@ -7,38 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FileSearch.h"
 
-NSMutableArray* findAllFileToArray(NSString *path){
-    NSMutableArray* files = [[NSMutableArray alloc] init];
-    
-    NSFileManager *manager = [[NSFileManager alloc] init];
-    NSDirectoryEnumerator *fileEnumerator = [manager enumeratorAtPath:path];
-    
-    for(NSString *filename in fileEnumerator){
-        [files addObject:filename];
-    }
-    
-    return files;
-}
-
-void printAllSubFiles(NSString *path){
-    NSArray* fileList = findAllFileToArray(path);
-    for(NSString* fileName in fileList){
-        NSLog(@"%@\n",fileName);
-    }
-}
-void isExistFilename(NSString* findfile, NSString* path){
-    NSFileManager *manager = [[NSFileManager alloc] init];
-    NSDirectoryEnumerator *fileEnumerator = [manager enumeratorAtPath:path];
-    
-    for(NSString *filename in fileEnumerator){
-        if([filename isEqualToString:findfile] == 1){
-            NSLog(@"FIND \"%@\" file!! \n",filename);
-            return;
-        }
-    }
-    NSLog(@"I DON'T HAVE \"%@\" file...\n",findfile);
-}
 
 int main(int argc, const char * argv[])
 {
@@ -47,18 +17,17 @@ int main(int argc, const char * argv[])
         
         // insert code here...
         NSURL *myURL = [NSURL URLWithString:
-                        @"file:////Users/Kimminju/Documents/2-2NEXT/IOS"];
+                        @"file:////Users/Kimminju/Documents/2-2NEXT/DBA"];
         NSString *path = [myURL path];
-        printAllSubFiles(path);
+        FileSearch *fs = [[FileSearch alloc]init];
         
-//        NSArray* temp = findAllFileToArray(path);
+        NSArray* temp = [fs findAllFileToArray: path];
+        NSSortDescriptor* sortDiscriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
+        NSArray* sortedArray = [temp sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortDiscriptor, nil]];
         
-        
-//        NSString* temp = @"2014_IOS_solve";
-//        isExistFilename(temp, path);
-
-        
-
+        for(NSString* name in sortedArray){
+            NSLog(@"%@", name);
+        }
     }
     return 0;
 }

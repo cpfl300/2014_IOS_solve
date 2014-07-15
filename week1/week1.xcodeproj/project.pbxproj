@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450B0E7C1975004200102329 /* FileSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 450B0E7B1975004200102329 /* FileSearch.m */; };
 		45ADD713196E656D002EEA1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ADD712196E656D002EEA1E /* Foundation.framework */; };
 		45ADD716196E656D002EEA1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ADD715196E656D002EEA1E /* main.m */; };
 		45ADD71A196E656D002EEA1E /* week1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45ADD719196E656D002EEA1E /* week1.1 */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		450B0E7A1975004200102329 /* FileSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSearch.h; sourceTree = "<group>"; };
+		450B0E7B1975004200102329 /* FileSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSearch.m; sourceTree = "<group>"; };
 		45ADD70F196E656D002EEA1E /* week1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = week1; sourceTree = BUILT_PRODUCTS_DIR; };
 		45ADD712196E656D002EEA1E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45ADD715196E656D002EEA1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -76,6 +79,8 @@
 				45ADD715196E656D002EEA1E /* main.m */,
 				45ADD719196E656D002EEA1E /* week1.1 */,
 				45ADD717196E656D002EEA1E /* Supporting Files */,
+				450B0E7A1975004200102329 /* FileSearch.h */,
+				450B0E7B1975004200102329 /* FileSearch.m */,
 			);
 			path = week1;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45ADD716196E656D002EEA1E /* main.m in Sources */,
+				450B0E7C1975004200102329 /* FileSearch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +259,7 @@
 				45ADD71F196E656D002EEA1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
