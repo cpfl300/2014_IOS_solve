@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "convertor.h"
+#import "makeJson.h"
 
 int main(int argc, const char * argv[])
 {
@@ -18,12 +19,17 @@ int main(int argc, const char * argv[])
         NSString* dict_sample = @"{\"id\":007,\"name\":\"james\",\"weapons\":[gun,pen]}";
         
         NSString* simple_arr = @"[test1, test2, test3]";
-        NSString* simple_dic = @"{key:val, key2:3}";
+        NSString* simple_dic = @"{key:val, key2:3, key3:val3}";
         
         convertor* cv = [[convertor alloc]init];
-        NSLog(@"%@", [cv convertingStringToDicOrArr: array_sample]);
+
+//        NSArray* simple_ar = [cv convertingStringToDicOrArr: simple_arr];
+//        NSDictionary* simple_di = [cv convertingStringToDicOrArr: simple_dic];
+        NSArray* ar_sample = [cv convertingStringToDicOrArr: array_sample];
+        NSDictionary* di_sample = [cv convertingStringToDicOrArr: dict_sample];
         
-        
+        makeJson *mj = [[makeJson alloc]init];
+        NSLog(@"%@",[mj convertToJson:di_sample]);
         
     }
     return 0;

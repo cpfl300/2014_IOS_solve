@@ -13,10 +13,8 @@
 -(id)convertingStringToDicOrArr:(NSString*)jsonData{
     
     if([[jsonData substringToIndex:1] isEqualToString:@"["]){
-        NSLog(@"ARR!!!");
         return [self convertToArray:jsonData];
     }else if([[jsonData substringToIndex:1] isEqualToString:@"{"]){
-        NSLog(@"DIC!!!");
         return [self convertToDic:jsonData];
     }
     return NULL;

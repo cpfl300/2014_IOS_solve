@@ -11,6 +11,7 @@
 		450B0ECE19779E6800102329 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 450B0ECD19779E6800102329 /* main.m */; };
 		450B0ED219779E6800102329 /* week2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 450B0ED119779E6800102329 /* week2.1 */; };
 		45175C4F197B69E800CC63A0 /* convertor.m in Sources */ = {isa = PBXBuildFile; fileRef = 45175C4E197B69E800CC63A0 /* convertor.m */; };
+		45AD0C4F197BC06C003D2C40 /* makeJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AD0C4E197BC06C003D2C40 /* makeJson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		450B0ED119779E6800102329 /* week2.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = week2.1; sourceTree = "<group>"; };
 		45175C4D197B69E800CC63A0 /* convertor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convertor.h; sourceTree = "<group>"; };
 		45175C4E197B69E800CC63A0 /* convertor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = convertor.m; sourceTree = "<group>"; };
+		45AD0C4D197BC06C003D2C40 /* makeJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = makeJson.h; sourceTree = "<group>"; };
+		45AD0C4E197BC06C003D2C40 /* makeJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = makeJson.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,8 @@
 				45175C4D197B69E800CC63A0 /* convertor.h */,
 				45175C4E197B69E800CC63A0 /* convertor.m */,
 				450B0ECD19779E6800102329 /* main.m */,
+				45AD0C4D197BC06C003D2C40 /* makeJson.h */,
+				45AD0C4E197BC06C003D2C40 /* makeJson.m */,
 				450B0ED119779E6800102329 /* week2.1 */,
 				450B0ECF19779E6800102329 /* Supporting Files */,
 			);
@@ -145,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45175C4F197B69E800CC63A0 /* convertor.m in Sources */,
+				45AD0C4F197BC06C003D2C40 /* makeJson.m in Sources */,
 				450B0ECE19779E6800102329 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
