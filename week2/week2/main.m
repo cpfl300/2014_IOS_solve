@@ -21,7 +21,7 @@ int main(int argc, const char * argv[])
         NSString* simple_dic = @"{key:val, key2:3}";
         
         convertor* cv = [[convertor alloc]init];
-        NSLog(@"%@", [cv convertingStringToDicOrArr: simple_dic]);
+        NSLog(@"%@", [cv convertingStringToDicOrArr: array_sample]);
         
         
         
