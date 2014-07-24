@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>15BDA2AE-F11E-40F2-B489-6A04AF68012A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>week3</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F2C03B2A-105B-4E92-925E-0D9648CF093A</key>
+		<string>https://github.com/cpfl300/2014_IOS_solve.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>week3/week3.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F2C03B2A-105B-4E92-925E-0D9648CF093A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cpfl300/2014_IOS_solve.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F2C03B2A-105B-4E92-925E-0D9648CF093A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F2C03B2A-105B-4E92-925E-0D9648CF093A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>2014_IOS_solve</string>
+		</dict>
+	</array>
+</dict>
+</plist>
