@@ -26,9 +26,10 @@ int main(int argc, const char * argv[])
 //            NSString* mystr = [NSString stringWithUTF8String:str];
 //            NSLog(@"%@",mystr);
 //        }
-
+        [np release];
         
     }
+    
     return 0;
 }
 
