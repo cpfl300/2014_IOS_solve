@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		456CEF1E1990B363003E591D /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		457184FC198A149B008696E1 /* week4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		457184FF198A149B008696E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45718501198A149B008696E1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -225,6 +226,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 457184F3198A149B008696E1;
 			productRefGroup = 457184FD198A149B008696E1 /* Products */;
@@ -296,6 +298,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				45718509198A149B008696E1 /* en */,
+				456CEF1E1990B363003E591D /* ko */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				45718530198A149B008696E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45718531198A149B008696E1 /* Build configuration list for PBXNativeTarget "week4Tests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +486,7 @@
 				45718533198A149B008696E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

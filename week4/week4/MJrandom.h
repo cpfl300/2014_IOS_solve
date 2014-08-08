@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface MJrandom : NSObject
+@property NSString* lastVal;
+
 -(void)randomize;
 @end

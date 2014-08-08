@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "week4/ViewController.m"
-            timestampString = "428484485.916396"
+            timestampString = "428486158.941813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-receivedNotification:"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-motionEnded:withEvent:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
