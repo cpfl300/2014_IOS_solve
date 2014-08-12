@@ -30,8 +30,6 @@
     _viewDate.text = [_selectedData objectForKey:@"date"];
     [_viewImage setImage:[UIImage imageNamed:[_selectedData objectForKey:@"image"]]];
 
-
-    NSLog(@"%@", _selectedData);
 }
 
 - (void)didReceiveMemoryWarning

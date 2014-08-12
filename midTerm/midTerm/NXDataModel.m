@@ -19,4 +19,13 @@
     _data = (NSMutableArray*)dic;
     [[NSNotificationCenter defaultCenter]postNotificationName:@"jsonComplete" object:self userInfo:dic];
 }
+
+- (void) orderView{
+    NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    
+    NSArray *sortDescriptors = [NSArray arrayWithObject: sorter];
+    [_data sortUsingDescriptors:sortDescriptors];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"jsonComplete" object:self userInfo:(NSDictionary*)_data];
+
+}
 @end

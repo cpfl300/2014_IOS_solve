@@ -11,6 +11,7 @@
 @interface NXDataModel : NSObject
 
 -(void)initData;
+-(void)orderView;
 @property NSMutableArray* data;
 
 @end

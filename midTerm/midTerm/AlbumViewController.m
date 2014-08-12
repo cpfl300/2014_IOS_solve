@@ -55,12 +55,7 @@
 
 - (void)orderByDate:(id)sender
 {
-    NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
-    
-    NSArray *sortDescriptors = [NSArray arrayWithObject: sorter];
-    [dataModel.data sortUsingDescriptors:sortDescriptors];
-    [self.tableView reloadData];
-
+    [dataModel orderView];
 }
 
 -(void) getData: (NSNotification *) notification {
@@ -159,6 +154,14 @@
     PhotoViewController * view = segue.destinationViewController;
     
     view.selectedData = choosed;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        [dataModel initData];
+    }
 }
 
 
