@@ -41,12 +41,28 @@
     
     dataModel = [[NXDataModel alloc]init];
     [dataModel initData];
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(orderByDate:)];
+    
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void)orderByDate:(id)sender
+{
+    NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    
+    NSArray *sortDescriptors = [NSArray arrayWithObject: sorter];
+    [dataModel.data sortUsingDescriptors:sortDescriptors];
+    [self.tableView reloadData];
+
+}
+
 -(void) getData: (NSNotification *) notification {
     [self.tableView reloadData];
 }
