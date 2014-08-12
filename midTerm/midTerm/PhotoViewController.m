@@ -26,7 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _viewTitle.text = [_selectedData objectForKey:@"title"];
+    _viewDate.text = [_selectedData objectForKey:@"date"];
+    [_viewImage setImage:[UIImage imageNamed:[_selectedData objectForKey:@"image"]]];
+
+
+    NSLog(@"%@", _selectedData);
 }
 
 - (void)didReceiveMemoryWarning

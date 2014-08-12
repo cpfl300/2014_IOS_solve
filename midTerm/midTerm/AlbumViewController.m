@@ -8,6 +8,7 @@
 
 #import "AlbumViewController.h"
 #import "NXDataModel.h"
+#import "PhotoViewController.h"
 
 
 
@@ -139,10 +140,9 @@
 {
     NSIndexPath *indexpath = [self.tableView indexPathForSelectedRow];
     NSDictionary* choosed = [dataModel.data objectAtIndex:indexpath.row];
-    segue.destinationViewController.selectedData = choosed;
-//    segue.destinationViewController.selectedData = [dataModel.data objectAtIndex:indexpath.row];
+    PhotoViewController * view = segue.destinationViewController;
     
-//    destination.selectedData = [dataModel.data objectAtIndex:indexPath.row];
+    view.selectedData = choosed;
 }
 
 

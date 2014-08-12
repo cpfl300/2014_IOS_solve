@@ -39,9 +39,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Photo" id="oVd-Y9-iSa"/>
                     <connections>
-                        <outlet property="date" destination="0De-9A-UWP" id="5x3-xD-Npe"/>
-                        <outlet property="image" destination="THa-Xg-kiq" id="TLX-R1-2N4"/>
-                        <outlet property="title" destination="icd-re-0jg" id="IBT-5c-fbp"/>
+                        <outlet property="viewDate" destination="0De-9A-UWP" id="GR3-fC-4fa"/>
+                        <outlet property="viewImage" destination="THa-Xg-kiq" id="HDy-z2-WZ1"/>
+                        <outlet property="viewTitle" destination="icd-re-0jg" id="5ls-uO-NZI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

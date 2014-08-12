@@ -10,8 +10,8 @@
 
 @interface PhotoViewController : UIViewController
 @property NSDictionary* selectedData;
-@property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UIImageView *image;
-@property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UILabel *viewTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *viewImage;
+@property (weak, nonatomic) IBOutlet UILabel *viewDate;
 
 @end
