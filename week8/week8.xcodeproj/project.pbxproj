@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		456F18DA19AEFFCC000D20BA /* BarGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456F18D919AEFFCC000D20BA /* BarGraphView.m */; };
+		456F18DD19AF0E54000D20BA /* PieGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 456F18DC19AF0E54000D20BA /* PieGraphView.m */; };
 		45C8FE0319AC556400FE0CAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8FE0219AC556400FE0CAB /* Foundation.framework */; };
 		45C8FE0519AC556400FE0CAB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8FE0419AC556400FE0CAB /* CoreGraphics.framework */; };
 		45C8FE0719AC556400FE0CAB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C8FE0619AC556400FE0CAB /* UIKit.framework */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		456F18D819AEFFCC000D20BA /* BarGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarGraphView.h; sourceTree = "<group>"; };
+		456F18D919AEFFCC000D20BA /* BarGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarGraphView.m; sourceTree = "<group>"; };
+		456F18DB19AF0E54000D20BA /* PieGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieGraphView.h; sourceTree = "<group>"; };
+		456F18DC19AF0E54000D20BA /* PieGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieGraphView.m; sourceTree = "<group>"; };
 		45C8FDFF19AC556400FE0CAB /* week8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C8FE0219AC556400FE0CAB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45C8FE0419AC556400FE0CAB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +124,10 @@
 				45C8FE1119AC556400FE0CAB /* AppDelegate.h */,
 				45C8FE1219AC556400FE0CAB /* AppDelegate.m */,
 				45C8FE1419AC556400FE0CAB /* Main.storyboard */,
+				456F18D819AEFFCC000D20BA /* BarGraphView.h */,
+				456F18D919AEFFCC000D20BA /* BarGraphView.m */,
+				456F18DB19AF0E54000D20BA /* PieGraphView.h */,
+				456F18DC19AF0E54000D20BA /* PieGraphView.m */,
 				45C8FE3719AC55AC00FE0CAB /* MyView.h */,
 				45C8FE3819AC55AC00FE0CAB /* MyView.m */,
 				45C8FE1719AC556400FE0CAB /* ViewController.h */,
@@ -254,9 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				456F18DA19AEFFCC000D20BA /* BarGraphView.m in Sources */,
 				45C8FE3919AC55AC00FE0CAB /* MyView.m in Sources */,
 				45C8FE1919AC556400FE0CAB /* ViewController.m in Sources */,
 				45C8FE1319AC556400FE0CAB /* AppDelegate.m in Sources */,
+				456F18DD19AF0E54000D20BA /* PieGraphView.m in Sources */,
 				45C8FE0F19AC556400FE0CAB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +474,7 @@
 				45C8FE3319AC556500FE0CAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45C8FE3419AC556500FE0CAB /* Build configuration list for PBXNativeTarget "week8Tests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +483,7 @@
 				45C8FE3619AC556500FE0CAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

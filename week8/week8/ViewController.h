@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BarGraphView.h"
+#import "PieGraphView.h"
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet BarGraphView *barView;
+@property (weak, nonatomic) IBOutlet PieGraphView *pieGraphView;
 
 @end
