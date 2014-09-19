@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
 
-@interface SongTableViewController : UITableViewController
+@interface SongTableViewController : UITableViewController<NSXMLParserDelegate>
+
 @property sqlite3 *db;
+@property sqlite3 *feedDb;
 @property NSMutableArray* songs;
+
+@property BOOL itemFlag;
+@property NSMutableArray* Unit;
+@property NSString* nowTagStr;
+//지울 것
+
+@property NSMutableString* txtBuffer;
 
 @end

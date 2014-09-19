@@ -28,9 +28,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _Unit = [[NSMutableArray alloc]init];
+    _txtBuffer = [[NSMutableString alloc]init];
+//    [self openDB];
+//    _songs = [self getDatas];
     
-    [self openDB];
-    _songs = [self getDatas];
+    [self makeDocumentDirDB];
+    [self getXMLData:@"http://images.apple.com/main/rss/hotnews/hotnews.rss"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,7 +90,98 @@
     return songs;
 }
 
+- (void) makeDocumentDirDB{
+    //    경로를 정해서 sqlite.db파일을 폴더에 넣는다
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *databasePath = [documentsDirectory stringByAppendingPathComponent:@"newsfeed.db"];
+    
+    //  db가 원래 존재하는지 체크
+    bool databaseAlreadyExists = [[NSFileManager defaultManager] fileExistsAtPath:databasePath];
+    if(sqlite3_open([databasePath UTF8String], &_feedDb) == SQLITE_OK){
+        if(!databaseAlreadyExists){
+            //  create tbl_newsfeed table
+            const char *sqlStatement = "CREATE TABLE IF NOT EXISTS tbl_newsfeed (TITLE TEXT PRIMARY KEY, LINK TEXT, DESCRIPTION TEXT, PUBDATE TEXT)";
+            char* error;
+            
+            if(sqlite3_exec(_feedDb, sqlStatement, NULL, NULL, &error) == SQLITE_OK){
+                NSLog(@"DB table created");
+            } else {
+                NSLog(@"Error: %s", error);
+            }
+        }
+    }
+}
 
+-(void) getXMLData:(NSString*)urlstr{
+    NSURL *url = [[NSURL alloc] initWithString:urlstr];
+    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    xmlParser.delegate = self;
+    [xmlParser parse];//start
+}
+
+- (void)parserDidStartDocument:(NSXMLParser *)parser {
+//    초기화
+    _nowTagStr = @"";
+    
+}
+
+-(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
+    if([elementName isEqualToString:@"item"]){
+        _itemFlag = YES;
+//        NSLog(@"[item]");
+    }
+    if(([elementName isEqualToString:@"title"] || [elementName isEqualToString:@"link"] || [elementName isEqualToString:@"description"] || [elementName isEqualToString:@"pubDate"])&&_itemFlag){
+		_nowTagStr = [NSString stringWithString:elementName];
+//		_txtBuffer = @"";
+//        NSLog(@"%@", _nowTagStr);
+	}
+
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
+	if ([_nowTagStr isEqualToString:@"title"] || [_nowTagStr isEqualToString:@"link"] || [_nowTagStr isEqualToString:@"description"] || [_nowTagStr isEqualToString:@"pubDate"]) {
+        
+        if(_itemFlag == YES&& ![string isEqualToString:@"\n"]){
+            // 텍스트 버퍼에 문자열을 추가한다.
+//            NSLog(@"%@", string);
+            [_txtBuffer appendString:string];
+//            [_Unit addObject:string];
+//            NSLog(@"%@", _Unit);
+//            _txtBuffer = [_txtBuffer stringByAppendingFormat:string];
+        }
+	}
+}
+
+-(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
+    
+    if([_nowTagStr isEqualToString:@"title"] || [_nowTagStr isEqualToString:@"link"] || [_nowTagStr isEqualToString:@"description"] || [_nowTagStr isEqualToString:@"pubDate"]){
+        if([elementName isEqualToString:_nowTagStr]){
+            [_Unit addObject:_txtBuffer];
+            _txtBuffer = [NSMutableString stringWithString:@""];
+        }
+    }
+    if([elementName isEqualToString:@"item"]){
+        [self insertXML:_Unit];
+        [_Unit removeAllObjects];
+    }
+}
+
+- (void) insertXML:(NSMutableArray*)dic{
+//    NSLog(@"%d", dic.count);
+    NSString* title = dic[0];
+    NSString* link = dic[1];
+    NSString* description = dic[2];
+    NSString* pubDate = dic[3];
+    
+    NSString* query = [[NSString alloc]initWithFormat:@"insert into \"tbl_newsfeed\" (title, link, description, pubDate) values(\"%@\" ,\"%@\" ,\"%@\" ,\"%@\")", title, link, description, pubDate];
+    
+    char *error;
+    if(sqlite3_exec(_feedDb, [query UTF8String], NULL, NULL, &error) == SQLITE_FAIL){
+        NSLog(@"FAIL");
+    }
+    
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
